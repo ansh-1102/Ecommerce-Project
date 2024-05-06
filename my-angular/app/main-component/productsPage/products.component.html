@@ -1,0 +1,106 @@
+<div class = "  ">
+    <main class = " px-4 sm:px-6 lg:px-40 pb-10">
+        <div class = "flex items-baseline justify-between border-gray-200 pb-6 pt-24">
+            <h1 class = "text-3xl font-bold ml-2">Products</h1>
+            
+            <div class = "flex items-center justify-end mr-2">
+                <div>
+                    <md-menu >
+                        <md-button ng-click="$mdMenu.open($event)" aria-label="Open menu" class="flex items-center justify-center p-0">
+                            Sort
+                        </md-button>
+                        <md-menu-content>
+                          <md-menu-item>
+                            <md-button>Price: Low to High</md-button>
+                          </md-menu-item>
+                          <md-menu-item>
+                            <md-button>Price: High to Low</md-button>
+                          </md-menu-item>
+                     
+                    </md-menu>
+            
+                </div>
+
+            </div>
+            
+
+        </div>
+        <md-divider style="border-top: 1px solid black;"></md-divider>
+        <section class = "pt-6">
+            <div class = "grid grid-cols-1 gap-8 gap-y-10 lg:grid-cols-4">
+                <div>
+                    <div class = "flex items-center justify-between">
+                        <p class = "text-lg">Filters</p>
+                        <md-icon md-svg-src="app/data/filter-alt-3-svgrepo-com.svg"></md-icon>
+
+                    </div>
+                    
+                    <form class = "hidden lg:block">
+                      
+                        <div ng-repeat = "item in $ctrl.filterData">
+                            <div class = " py-6">
+                                <span class = "font-medium" >{{item.name}}</span>
+
+                                <div class = "pt-6" id = "filter-section-0">
+                                    <div class = "py-4">
+                                        <div ng-repeat = "option in item.options">
+                                                <md-checkbox class="custom-checkbox" value = {{option.value}} name = {{item.id}} ng-click = $ctrl.handleMultipleSelectFilter(option.value,item.id)>
+                                                    <span class="text-sm text-gray-500">{{option.label}}</span>
+                                                </md-checkbox>
+                                        </div>
+                                    </div>
+                                </div>       
+
+                            </div>
+                            <md-divider style="border-top: 1px solid black;" ng-if="!$last"></md-divider>
+
+                        </div>
+                        <md-divider style="border-top: 1px solid black;" ng-if="!$last"></md-divider>
+
+                        <div ng-repeat = "item in $ctrl.singlefilterData">
+                            <div class = " py-6">
+                                <span class = "font-medium" >{{item.name}}</span>
+
+                                <div class = "pt-6" id = "filter-section-0">
+                                    <div class = "py-4">
+                                        <md-radio-group >
+                                            <div  ng-repeat = "option in item.options">
+
+                                                <md-radio-button
+                                                ng-click = $ctrl.handleSingleSelectFilter(option.value,item.id)
+                                                ng-model= " selectedOption " value = {{option.label}}>  <span class="text-sm text-gray-500">{{option.label}}</span>
+                                                </md-radio-button>
+                                
+                                                
+                                            </div>
+                                        </md-radio-group>
+                                        
+                                    </div>
+                                </div>       
+
+                            </div>
+                            <md-divider style="border-top: 1px solid black;" ng-if="!$last"></md-divider>
+
+                        </div>
+                        
+                    </form>
+                    
+                </div>
+                
+               <div class = "lg:col-span-3">
+                    <div class = "flex flex-wrap justify-evenly">
+                        <div ng-repeat = "item in $ctrl.mensPant">                       
+                                <product-card product = "item"></product-card>
+                                    
+                        </div>
+                    </div>
+                    
+                </div>
+            
+               
+            </div>
+            
+        </section>
+
+    </main>
+</div>

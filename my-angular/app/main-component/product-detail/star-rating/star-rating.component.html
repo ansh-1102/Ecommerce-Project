@@ -1,0 +1,10 @@
+<head>
+    <link rel = "stylesheet" href = "app/main-component/product-detail/star-rating/star-rating.component.css">
+</head>
+<div class="stars-container">
+    <div ng-repeat="star in $ctrl.stars" class="star" ng-click="$ctrl.rate(star)" ng-class="{'active': star <= $ctrl.currentRating}">
+        <md-icon>
+            <img ng-src="{{$ctrl.currentRating >= star ? 'app/data/star-full-icon.svg' : 'app/data/star-empty-icon.svg'}}" alt="Star" />
+        </md-icon>
+    </div>
+</div>

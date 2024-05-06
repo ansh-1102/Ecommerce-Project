@@ -1,0 +1,22 @@
+<head>
+    <link rel = "stylesheet" href = "app/main-component/productsPage/productCard/productcard.component.css">
+</head>
+<div ng-click="$ctrl.navigate()" class='productCard w-[17rem] m-3 transition-all cursor-pointer '>
+    <div class='h-[20rem]'>
+        <img class='h-full w-full object-cover object-left-top' src= "{{$ctrl.product.imageUrl}}" alt="" />
+    </div>
+    <div class='textPart  p-3  rounded-b-md'>
+        <div>
+            <p class=' opacity-80'>{{$ctrl.product.brand}}</p>
+            <p  class=''>{{$ctrl.product.title}}</p>
+            <p class='text-gray-600'>{{$ctrl.product.color}}</p>
+        </div>
+        
+        <div class='flex space-x-2 items-center'>
+            <p class='font-semibold'>₹{{$ctrl.product.discountedPrice}}</p>
+            <p class='text-gray-600 line-through'>₹{{$ctrl.product.price}}</p>
+            <p class='text-green-600 font-semibold'>{{$ctrl.product.discountedPrice}}%</p>
+        </div>
+        
+    </div>
+   </div>

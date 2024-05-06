@@ -1,0 +1,28 @@
+<div class = "flex justify-between space-x-8 w-full">
+    <div ng-repeat="step in $ctrl.steps track by $index" ng-init="last = $last" 
+    class = "flex justify-between items-center space-x-5 ml-20">
+
+    <div class="h-8 w-8 rounded-full flex justify-center items-center">
+        <md-icon ng-if="$ctrl.acsteps == step.title " md-svg-icon="app/data/green-checkmark-icon.svg"></md-icon>
+        <md-icon ng-if="$ctrl.acsteps != step.title " md-svg-icon="app/data/ellipse-shape-line-icon.svg"></md-icon>
+        <!-- <md-icon ng-if="$ctrl.acsteps != step.title && $ctrl.acsteps != 'CONFIRMED'" md-svg-icon="app/data/ellipse-shape-line-icon.svg"></md-icon> -->
+    </div>
+    
+        <span>
+            {{step.title}}
+        </span>
+        <div  class = "lg:w-[14vw]">
+            <md-divider 
+            ng-class = "{
+                'text-green-500':$ctrl.acsteps==$ctrl.step.title,
+                'text-gray-300':$ctrl.acsteps!=$ctrl.step.title,
+            }"
+            ng-if="!$last" class="border-gray-500 "></md-divider>
+            
+        </div>
+
+    </div>
+</div>
+
+
+

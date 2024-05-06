@@ -1,0 +1,8 @@
+.stars-container {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Align items vertically */
+}
+
+.star {
+    margin-right: 5px; /* Adjust the value as needed */
+}

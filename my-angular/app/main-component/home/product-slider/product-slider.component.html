@@ -1,0 +1,10 @@
+<!-- MY-ANGULAR/app/components/product-slider/product-slider.component.html -->
+
+<div class="p-5 lg:px-20 lg:py-10">
+    <p class="font-semibold text-2xl opacity-75">{{$ctrl.title}}</p>
+    <div class="flex flex-wrap justify-center">
+        <div class="flex" ng-repeat="item in $ctrl.products">
+            <home-product product = "item"></home-product>
+        </div>
+    </div>
+</div>

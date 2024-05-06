@@ -1,0 +1,63 @@
+<head>
+    <link href="app/main-component/navbar/navbar.component.css" rel="stylesheet">
+</head>
+
+<div class = "fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800 " >
+    
+    <div class = "relative h-16 flex items-center justify-between">
+        <div class = "flex items-center ml-10">
+            <div class = "mr-5">
+                <img class = "w-6" src = "app/data/mylogo.png" alt = "FashionTrends">
+            </div>
+            
+            <div class = "">
+                <div class = "flex  space-x-4">
+                    <a routerLink = "/" class = "text-gray-800 mt-3 "  style="font-size: 17px;" >
+                        FashionTrends
+                    </a>
+                    <div>
+                        <md-button class = "open-button" ng-click="$ctrl.openNavbarContent('men')" style="font-size: 16px;">Men</md-button>
+                      </div>
+                      <div>
+                        <md-button class = "open-button" ng-click="$ctrl.openNavbarContent('women')"style="font-size: 16px;">Women</md-button>
+                    </div>
+                      
+                </div>
+            </div>  
+        </div>
+        <div class = "flex items-center justify-end mr-10">
+            
+
+            <button aria-label="Cart" (click)="goToCart('cart')" class="mr-4">
+                <md-icon md-svg-src="app/data/cart-shopping-svgrepo-com.svg" class="s35"></md-icon>
+            </button>
+            <md-button ng-click = "$ctrl.handleOpenLoginModal()" ng-if = "true" class = "md-raised" md-colors="{background: 'myNavbarColor'}">
+                LOGIN
+            </md-button>
+
+            <md-menu ng-if="$ctrl.userloginstatus">
+                <md-button ng-click="$mdMenu.open($event)" aria-label="Open menu" class="flex items-center justify-center p-0">
+                    <span class="font-bold text-lg mr-2 text-transform:lowercase">Ansh</span>
+                  <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659651_640.png" alt="Menu" class="w-9 h-9">
+                </md-button>
+                <md-menu-content>
+                  <md-menu-item>
+                    <md-button>Profile</md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button ng-click = "$ctrl.navigateToCheckout()" >Orders</md-button>
+                  </md-menu-item>
+                  <md-menu-item>
+                    <md-button>Logout</md-button>
+                  </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+              
+            
+            
+        </div>
+    </div>
+    <div ng-if="$ctrl.isNavbarContentOpen" class="modal-container">
+        <nav-content selected-section="$ctrl.currentSection"></nav-content>
+    </div>
+</div>

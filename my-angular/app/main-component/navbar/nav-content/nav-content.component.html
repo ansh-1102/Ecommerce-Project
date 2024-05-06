@@ -1,0 +1,26 @@
+<div class = "w-full">
+    <div class = "bg-gray-950 text-white w-full h-1/2 shadow-lg p-6">
+        <div class = "flex justify-around">
+            <div class = "flex flex-col" ng-repeat = "item in $ctrl.category[$ctrl.selectedSection].sections">
+                
+                <h1 class="text-center text-2xl font-bold mb-4">{{item.name}}</h1>
+                <md-button  ng-repeat="section in item.items">{{section.name}}</md-button>
+            </div>
+            <div class = "hidden lg:block">
+                <div class = "mb-5 mr-7">
+                    <img class = "w-[19rem] h-[20rem] object-cover object-top rounded-md" src = "https://i.pinimg.com/originals/60/c9/d2/60c9d2ec79d3d70c7f637f54a717e6ff.jpg" alt >
+                </div>
+                <p  style="color: white;">New Arrivals</p>
+
+            </div>
+            <div class = "hidden lg:block">
+                <div class = "mb-5">
+                    <img class = "w-[19rem] h-[20rem] object-cover object-top rounded-md" src = "https://www.wedabout.com/blog/wp-content/uploads/2020/11/mehndi-ceremony-outfit-idea-inspiration-822x1024.jpg" alt >
+                </div>
+                <p  style="color: white;">New Arrivals</p>
+
+            </div>
+                
+        </div>
+    </div>
+</div>

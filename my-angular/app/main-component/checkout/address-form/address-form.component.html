@@ -1,0 +1,87 @@
+<head>
+    <link rel = "stylesheet" href = "app/main-component/checkout/address-form/address-form.component.css">
+</head>
+
+
+
+<div class="grid grid-cols-1 gap-4 lg:grid-cols-4 px-5 lg:px-20">
+    <div class="col-span-2 lg-col-span-2">
+        <div class="rounded-md  shadow-md lg-h-[32.2rem] overflow-y-scroll hide-scrollbar py-5 ">
+           
+            
+                <div class="p-5 py-7 cursor-pointer">
+                    
+                    <div  ng-repeat="item in $ctrl.adresses track by $index" ng-init="$last = $last" class="py-2 space-y-2">
+                        <address-card address="item"></address-card>
+                        <md-button style="padding: 1.2rem" class="md-raised md-accent" ng-click="$ctrl.handleCreateOrder(item)">Deliver Here</md-button>
+                        
+                        <md-divider ng-if="!$last"></md-divider>
+                    </div>
+                </div>        
+        </div>
+    </div> 
+    
+    <div class="col-span-2 lg-col-span-2">
+        <div class="rounded-md shadow-md p-5 ">
+          <form ng-submit="$ctrl.handleSubmit()">
+            <div class="grid grid-cols-2 gap-3 sm-grid-cols-2">
+            
+              <div class="col-span-1">
+                <md-input-container class="w-full">
+                    <label>First Name</label>
+                    <input type="text" ng-model="$ctrl.myForm.firstName" placeholder="First Name" autocomplete="given-name" required class="py-8 bg-transparent bg-black">
+                </md-input-container>
+               </div>
+            
+              <div class="col-span-1">
+                <md-input-container class="w-full">
+                  <label>Last Name</label>
+                  <input type="text" ng-model="$ctrl.myForm.lastName" placeholder="Last Name" autocomplete="given-name" required class="py-8 bg-transparent bg-black">
+                </md-input-container>
+              </div>
+              <div class="col-span-2">
+                <md-input-container class="w-full">
+                    <label>Address</label>
+                  <textarea ng-model="$ctrl.myForm.streetAddress" placeholder="Address" autocomplete="shipping address" rows="4" required></textarea>
+                </md-input-container>
+              </div>
+              <div class="col-span-1">
+                <md-input-container class="w-full">
+                  <label>City</label>
+                  <input type="text" ng-model="$ctrl.myForm.city" placeholder="City" autocomplete="shipping address-level2" required>
+                </md-input-container>
+              </div>
+              <div class="col-span-1">
+                <md-input-container class="w-full">
+                  <label>State</label>
+                  <input type="text" ng-model="$ctrl.myForm.state" placeholder="State" required>
+                </md-input-container>
+              </div>
+              <div class="col-span-1">
+                <md-input-container class="w-full">
+                  <label>Zip / Postal code</label>
+                  <input type="text" ng-model="$ctrl.myForm.zipCode" placeholder="Zip / Postal code" autocomplete="shipping postal-code" required>
+                </md-input-container>
+              </div>
+              <div class="col-span-1">
+                <md-input-container class = "w-full">
+                  <label>Phone Number</label>
+                  <input type="text" ng-model="$ctrl.myForm.mobile" placeholder="Phone Number" autocomplete="tel" required>
+                </md-input-container>
+              </div>
+              <div class="col-span-2">
+                <!-- <button class="w-full md-raised-button md-accent" style="padding: 1.6rem" type="submit">Deliver Here</button> -->
+
+                <md-button  style = "padding: 1.2rem;" type = "submit"
+                class=" text-lg bg-yellow-500 mt-4 p-28 px-10 w-full" >
+                Deliver Here
+              </md-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+</div>
+
+
+

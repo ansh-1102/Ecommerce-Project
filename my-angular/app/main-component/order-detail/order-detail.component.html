@@ -1,0 +1,20 @@
+<div class = "py-20" text-white px-5 lg:px-20>
+    <div class = "py-5">
+        <h1 class="text-center py-2 mb-20 font-bold text-2xl">Order Status</h1>
+
+        <order-tracker acsteps = "CONFIRMED" steps = "$ctrl.steps"  ></order-tracker>
+    </div>
+    <div class = "space-y-10 pt-10">
+        <div class = "box px-10">
+            <h1 class = "text-lg font-semibold py-5">Shipping Address</h1>
+
+            <address-card></address-card>
+        </div>
+        <div class = "space-y-6 mt-20 px-10">
+            <div ng-repeat = "orderItems in $ctrl.Orders track by $index">
+                <order-card></order-card>
+            </div>
+
+        </div>
+    </div>
+</div>

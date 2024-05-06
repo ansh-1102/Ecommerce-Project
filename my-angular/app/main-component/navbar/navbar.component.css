@@ -1,0 +1,16 @@
+
+    /* Modify the existing s60 class to make the icon larger */
+.s35 {
+    width: 35px;
+    height: 35px;
+}
+
+
+/* navbar.component.css */
+/* navbar.component.css */
+/* .modal-container {
+    position: relative; /* Change position to relative */
+    /* z-index: 50; Ensure a lower z-index than navbar */
+/* }  */
+
+
